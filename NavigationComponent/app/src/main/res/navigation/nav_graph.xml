@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/figurasFragment">
+
+    <fragment
+        android:id="@+id/figurasFragment"
+        android:name="com.example.navigationcomponent.fragments.FigurasFragment"
+        android:label="fragment_figuras"
+        tools:layout="@layout/fragment_figuras">
+        <action
+            android:id="@+id/action_figurasFragment_to_dataFragment"
+            app:destination="@id/dataFragment"
+            app:popUpTo="@id/figurasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.navigationcomponent.fragments.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/action_dataFragment_to_figurasFragment"
+            app:destination="@id/figurasFragment" />
+        <argument
+            android:name="nombre"
+            app:argType="string" />
+        <argument
+            android:name="img"
+            app:argType="integer" />
+        <argument
+            android:name="figura"
+            app:argType="integer" />
+    </fragment>
+</navigation>
